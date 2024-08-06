@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>DanIezz's Enterprise</title>
+</head>
+<body>
+    <nav class="section__container nav__container">
+        <a href="#" class="nav__logo">
+            <img src="DanIezz_s_Enterprise-removebg-preview.png" alt="Logo" class="nav__logo-img" />DanIezz's Enterprise
+        </a>
+        <div class="nav__menu">
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">HOME</a></li>
+                <li class="link"><a href="#product-section">PRODUCT</a></li>
+                <li class="link"><a href="https://sociabuzz.com/faizzdanieljagung">CONTACT</a></li>
+            </ul>
+            <div class="nav__icons">
+                <span><i class="ri-shield-user-line"></i></span>
+                <span><i class="ri-search-line"></i></span>
+                <span><i class="ri-shopping-bag-2-line" onclick="toggleCart()"></i></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section__container sale__container">
+        <h2 class="section__title">Product</h2>
+        <div class="sale__slider">
+            <div class="sale__card">
+                <img src="siratempe.jpg" alt="Tempe Sira Sambal 100g" />
+                <div class="sale__content">
+                    <p class="sale__subtitle">Tempe Sira Sambal 100G</p>
+                    <h4 class="sale__title">RM 6.00</h4>
+                    <p class="sale__subtitle">-100 Gram-</p>
+                    <button data-stock="10" onclick="addToCart('Tempe Sira Sambal 100G', 6.00, this)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="sale__card">
+                <img src="SIRA400.jpg" alt="Tempe Sira Sambal 400g" />
+                <div class="sale__content">
+                    <p class="sale__subtitle">Tempe Sira Sambal 400G</p>
+                    <h4 class="sale__title">RM 12.00</h4>
+                    <p class="sale__subtitle">-400 Gram-</p>
+                    <button data-stock="10" onclick="addToCart('Tempe Sira Sambal 400G', 12.00, this)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="sale__card">
+                <img src="Sign.jpeg" alt="Signature Blend Frenché Roast Coffee" />
+                <div class="sale__content">
+                    <p class="sale__subtitle">Signature Blend Frenché Roast Coffee</p>
+                    <h4 class="sale__title">RM 16.50</h4>
+                    <p class="sale__subtitle">- One pack 25 Stick-</p>
+                    <button data-stock="10" onclick="addToCart('Signature Blend Frenché Roast Coffee', 16.50, this)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="sale__card">
+                <img src="Salted.jpg" alt="Salted Caramel Frenché Roast Coffee" />
+                <div class="sale__content">
+                    <p class="sale__subtitle">Salted Caramel Frenché Roast Coffee</p>
+                    <h4 class="sale__title">RM 16.50</h4>
+                    <p class="sale__subtitle">- One pack 18 Stick -</p>
+                    <button data-stock="10" onclick="addToCart('Salted Caramel Frenché Roast Coffee', 16.50, this)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="sale__card">
+                <img src="tiramisu.jpg" alt="Tiramisu Latte Frenché Roast Coffee" />
+                <div class="sale__content">
+                    <p class="sale__subtitle">Tiramisu Latte Frenché Roast Coffee</p>
+                    <h4 class="sale__title">RM 16.50</h4>
+                    <p class="sale__subtitle">- One pack 18 Stick-</p>
+                    <button data-stock="10" onclick="addToCart('Tiramisu Latte Frenché Roast Coffee', 16.50, this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="customer-photos" class="section__container customer__photos">
+        <h2 class="section__title">Gambar Bersama Pelanggan</h2>
+        <div class="photos__slider">
+            <div class="photo__item">
+                <img src="cust2 edit.jpg" alt="Customer Photo 1" />
+            </div>
+            <div class="photo__item">
+                <img src="Cust 3.jpg" alt="Customer Photo 2" />
+            </div>
+            <div class="photo__item">
+                <img src="WhatsApp Image 2024-08-05 at 17.40.56_4be0e2ac.jpg" alt="Customer Photo 3" />
+            </div>
+            <div class="photo__item">
+                <img src="Cust5.jpg" alt="Customer Photo 4" />
+            </div>
+            <div class="photo__item">
+                <img src="Cust 5.jpg" alt="Customer Photo 5" />
+            </div>
+        </div>
+    </section>
+
+    <div id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total: RM <span id="cart-total">0.00</span></h3>
+        <img src="qrcode.jpg" alt="Bank QR Code" class="qr-code"/>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="clearCart()">Clear Cart</button>
+        <div class="payment-guide">
+            <h3>How to Pay</h3>
+            <ol>
+                <li>Scan the QR code above using your bank's mobile app.</li>
+                <li>Enter the total amount: RM <span id="guide-total">0.00</span></li>
+                <li>Complete the payment.</li>
+                <li>Take a screenshot of the payment receipt.</li>
+                <li>Submit the receipt through the checkout button and it will directed to Google Form. Submit the receipt there thank you</a>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Contact me if you having difficulty to make a payment through my website</p>
+        <div class="social-icons">
+            <a href="https://wa.me/60177447610" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+
+    <footer class="section__container footer__bar">
+        <div class="copyright">
+            © 2024 Faizz Jagung Rebus. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
